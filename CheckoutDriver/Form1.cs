@@ -16,5 +16,10 @@ namespace CheckoutDriver
         {
             InitializeComponent();
         }
+
+        private void myInit()
+        {
+           
+        }
     }
 }

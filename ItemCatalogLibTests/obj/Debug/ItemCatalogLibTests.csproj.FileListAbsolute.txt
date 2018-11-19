@@ -1,0 +1,8 @@
+c:\users\bill\documents\visual studio 2015\Projects\CheckoutDriver\ItemCatalogLibTests\bin\Debug\ItemCatalogLibTests.dll
+c:\users\bill\documents\visual studio 2015\Projects\CheckoutDriver\ItemCatalogLibTests\bin\Debug\ItemCatalogLibTests.pdb
+c:\users\bill\documents\visual studio 2015\Projects\CheckoutDriver\ItemCatalogLibTests\bin\Debug\ItemCatalogLib.dll
+c:\users\bill\documents\visual studio 2015\Projects\CheckoutDriver\ItemCatalogLibTests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+c:\users\bill\documents\visual studio 2015\Projects\CheckoutDriver\ItemCatalogLibTests\bin\Debug\ItemCatalogLib.pdb
+c:\users\bill\documents\visual studio 2015\Projects\CheckoutDriver\ItemCatalogLibTests\obj\Debug\ItemCatalogLibTests.csprojResolveAssemblyReference.cache
+c:\users\bill\documents\visual studio 2015\Projects\CheckoutDriver\ItemCatalogLibTests\obj\Debug\ItemCatalogLibTests.dll
+c:\users\bill\documents\visual studio 2015\Projects\CheckoutDriver\ItemCatalogLibTests\obj\Debug\ItemCatalogLibTests.pdb

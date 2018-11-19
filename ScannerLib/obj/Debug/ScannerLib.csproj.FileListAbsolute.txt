@@ -1,0 +1,5 @@
+c:\users\bill\documents\visual studio 2015\Projects\CheckoutDriver\ScannerLib\bin\Debug\ScannerLib.dll
+c:\users\bill\documents\visual studio 2015\Projects\CheckoutDriver\ScannerLib\bin\Debug\ScannerLib.pdb
+c:\users\bill\documents\visual studio 2015\Projects\CheckoutDriver\ScannerLib\obj\Debug\ScannerLib.csprojResolveAssemblyReference.cache
+c:\users\bill\documents\visual studio 2015\Projects\CheckoutDriver\ScannerLib\obj\Debug\ScannerLib.dll
+c:\users\bill\documents\visual studio 2015\Projects\CheckoutDriver\ScannerLib\obj\Debug\ScannerLib.pdb

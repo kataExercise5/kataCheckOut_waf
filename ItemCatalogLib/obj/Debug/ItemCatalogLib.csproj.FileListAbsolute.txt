@@ -2,3 +2,4 @@ c:\users\bill\documents\visual studio 2015\Projects\CheckoutDriver\ItemCatalogLi
 c:\users\bill\documents\visual studio 2015\Projects\CheckoutDriver\ItemCatalogLib\bin\Debug\ItemCatalogLib.pdb
 c:\users\bill\documents\visual studio 2015\Projects\CheckoutDriver\ItemCatalogLib\obj\Debug\ItemCatalogLib.dll
 c:\users\bill\documents\visual studio 2015\Projects\CheckoutDriver\ItemCatalogLib\obj\Debug\ItemCatalogLib.pdb
+c:\users\bill\documents\visual studio 2015\Projects\CheckoutDriver\ItemCatalogLib\obj\Debug\ItemCatalogLib.csprojResolveAssemblyReference.cache

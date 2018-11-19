@@ -43,6 +43,12 @@
     <Compile Include="Scanner.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ItemCatalogLib\ItemCatalogLib.csproj">
+      <Project>{29bee812-a96d-4132-9daa-1a57ae5860cd}</Project>
+      <Name>ItemCatalogLib</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

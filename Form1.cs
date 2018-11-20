@@ -110,7 +110,7 @@ namespace CheckoutDriver
             int qty;
             if (int.TryParse(qtyOrPoundsTextBox.Text, out qty))
             {
-                price = selectedItem.calcPrice(qty, new DateTime(2018, 11, 19));
+                price = scanner.checkOutItem(selectedCheckOutNbr, selectedItem.getItemName(), qty);
                 updatePurchasedList();
             }
             else
@@ -124,7 +124,7 @@ namespace CheckoutDriver
             decimal pounds;
             if (decimal.TryParse(qtyOrPoundsTextBox.Text, out pounds))
             {
-                price = selectedItem.calcPrice(pounds, new DateTime(2018, 11, 19));
+                price = scanner.checkOutItem(selectedCheckOutNbr, selectedItem.getItemName(), pounds);
                 updatePurchasedList();
             }
             else
@@ -144,6 +144,14 @@ namespace CheckoutDriver
             UserDlg userDlg = new UserDlg();
             userDlg.setDlgText(msg);
             userDlg.ShowDialog();
+        }
+
+        private void openCheckOutsComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (openCheckOutsComboBox.SelectedIndex != -1)
+            {
+                selectedCheckOutNbr = openCheckOutsComboBox.SelectedIndex;
+            }
         }
     }
 }

@@ -69,6 +69,7 @@
             this.openCheckOutsComboBox.Name = "openCheckOutsComboBox";
             this.openCheckOutsComboBox.Size = new System.Drawing.Size(89, 28);
             this.openCheckOutsComboBox.TabIndex = 2;
+            this.openCheckOutsComboBox.SelectedIndexChanged += new System.EventHandler(this.openCheckOutsComboBox_SelectedIndexChanged);
             // 
             // label1
             // 

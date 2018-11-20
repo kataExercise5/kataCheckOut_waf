@@ -10,34 +10,34 @@ namespace ScannerLib
     public class Scanner
     {
         private ItemCatalog itemCatalog;
-        private Dictionary<int, decimal> checkOutSummary;
+        private Dictionary<int, decimal> openCheckOuts;
         private string errorMsg;
         public string getErrorMsg() { return errorMsg; }
 
         public Scanner()
         {
             itemCatalog = new ItemCatalog();
-            checkOutSummary = new Dictionary<int, decimal>();
+            openCheckOuts = new Dictionary<int, decimal>();
         }
 
         //ctor to support unit tests
         public Scanner(Dictionary<int, decimal> testSum)
         {
             itemCatalog = new ItemCatalog();
-            checkOutSummary = testSum;
+            openCheckOuts = testSum;
         }
 
         public bool initCheckOut(int checkOutNbr)
         {
             try
             {
-                if (checkOutSummary.ContainsKey(checkOutNbr))
+                if (openCheckOuts.ContainsKey(checkOutNbr))
                 {
-                    checkOutSummary[checkOutNbr] = 0m;
+                    openCheckOuts[checkOutNbr] = 0m;
                 }
                 else
                 {
-                    checkOutSummary.Add(checkOutNbr, 0m);
+                    openCheckOuts.Add(checkOutNbr, 0m);
                 }
                 return true;
             }
@@ -54,9 +54,9 @@ namespace ScannerLib
             decimal checkOutTotal;
             try
             {
-                if (checkOutSummary.ContainsKey(checkOutNbr))
+                if (openCheckOuts.ContainsKey(checkOutNbr))
                 {
-                    checkOutTotal = checkOutSummary[checkOutNbr];
+                    checkOutTotal = openCheckOuts[checkOutNbr];
                 }
                 else
                 {
@@ -71,46 +71,26 @@ namespace ScannerLib
             }
         }
 
-        public bool checkOutItem(int checkOutNbr, string itemName, int qty)
+        public decimal checkOutItem(int checkOutNbr, string itemName, int qty)
         {
-            try
+            if (!openCheckOuts.ContainsKey(checkOutNbr))
             {
-                if (!checkOutSummary.ContainsKey(checkOutNbr))
-                {
-                    errorMsg = "This check out register has not been initialized.";
-                    return false;
-                }
-                decimal itemTotalPrice = itemCatalog.calcPrice(itemName, qty, new DateTime(2018, 11, 19));
-                checkOutSummary[checkOutNbr] = checkOutSummary[checkOutNbr] + itemTotalPrice;
-                return true;
+                throw new Exception("This check out register has not been initialized.");
             }
-            catch (Exception ex)
-            {
-                //use excp msg for now
-                errorMsg = ex.Message;
-                return false;
-            }
+            decimal itemTotalPrice = itemCatalog.calcPrice(itemName, qty, new DateTime(2018, 11, 19));
+            openCheckOuts[checkOutNbr] = openCheckOuts[checkOutNbr] + itemTotalPrice;
+            return itemTotalPrice;
         }
 
-        public bool checkOutItem(int checkOutNbr, string itemName, decimal pounds)
+        public decimal checkOutItem(int checkOutNbr, string itemName, decimal pounds)
         {
-            try
+            if (!openCheckOuts.ContainsKey(checkOutNbr))
             {
-                if (!checkOutSummary.ContainsKey(checkOutNbr))
-                {
-                    errorMsg = "This check out register has not been initialized.";
-                    return false;
-                }
-                decimal itemTotalPrice = itemCatalog.calcPrice(itemName, pounds, new DateTime(2018, 11, 19));
-                checkOutSummary[checkOutNbr] = checkOutSummary[checkOutNbr] + itemTotalPrice;
-                return true;
+                throw new Exception("This check out register has not been initialized.");
             }
-            catch (Exception ex)
-            {
-                //use excp msg for now
-                errorMsg = ex.Message;
-                return false;
-            }
+            decimal itemTotalPrice = itemCatalog.calcPrice(itemName, pounds, new DateTime(2018, 11, 19));
+            openCheckOuts[checkOutNbr] = openCheckOuts[checkOutNbr] + itemTotalPrice;
+            return itemTotalPrice;
         }
     }
 }

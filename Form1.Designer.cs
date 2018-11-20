@@ -42,6 +42,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.totalPurchaseAmtTextBox = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.scannerPurchasedItemsListBox = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // createCheckOutRegisterButton
@@ -139,7 +141,7 @@
             // 
             this.checkedOutItemsListBox.FormattingEnabled = true;
             this.checkedOutItemsListBox.ItemHeight = 20;
-            this.checkedOutItemsListBox.Location = new System.Drawing.Point(542, 174);
+            this.checkedOutItemsListBox.Location = new System.Drawing.Point(373, 174);
             this.checkedOutItemsListBox.Name = "checkedOutItemsListBox";
             this.checkedOutItemsListBox.Size = new System.Drawing.Size(229, 304);
             this.checkedOutItemsListBox.TabIndex = 10;
@@ -147,11 +149,11 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(547, 150);
+            this.label3.Location = new System.Drawing.Point(370, 150);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(129, 20);
+            this.label3.Size = new System.Drawing.Size(237, 20);
             this.label3.TabIndex = 11;
-            this.label3.Text = "Purchased Items";
+            this.label3.Text = "Purchased Items captured by UI";
             // 
             // label4
             // 
@@ -169,11 +171,31 @@
             this.totalPurchaseAmtTextBox.Size = new System.Drawing.Size(95, 26);
             this.totalPurchaseAmtTextBox.TabIndex = 13;
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(694, 150);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(229, 20);
+            this.label5.TabIndex = 15;
+            this.label5.Text = "Purchased Items from Scanner";
+            // 
+            // scannerPurchasedItemsListBox
+            // 
+            this.scannerPurchasedItemsListBox.FormattingEnabled = true;
+            this.scannerPurchasedItemsListBox.ItemHeight = 20;
+            this.scannerPurchasedItemsListBox.Location = new System.Drawing.Point(697, 174);
+            this.scannerPurchasedItemsListBox.Name = "scannerPurchasedItemsListBox";
+            this.scannerPurchasedItemsListBox.Size = new System.Drawing.Size(229, 304);
+            this.scannerPurchasedItemsListBox.TabIndex = 14;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(938, 648);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.scannerPurchasedItemsListBox);
             this.Controls.Add(this.totalPurchaseAmtTextBox);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -211,6 +233,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox totalPurchaseAmtTextBox;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ListBox scannerPurchasedItemsListBox;
     }
 }
 

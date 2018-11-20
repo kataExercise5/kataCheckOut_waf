@@ -21,10 +21,10 @@ namespace ScannerLib
         }
 
         //ctor to support unit tests
-        public Scanner(Dictionary<int, decimal> testSum)
+        public Scanner(ItemCatalog itemCat)
         {
-            itemCatalog = new ItemCatalog();
-            openCheckOuts = testSum;
+            itemCatalog = itemCat;
+            openCheckOuts = new Dictionary<int, decimal>();
         }
 
         public bool initCheckOut(int checkOutNbr)

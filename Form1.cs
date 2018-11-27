@@ -2,12 +2,6 @@
 using ScannerLib;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CheckoutDriver
@@ -20,6 +14,7 @@ namespace CheckoutDriver
         private Item selectedItem;
         private decimal price;
         private int selectedCheckOutNbr;
+        private Dictionary<int, List<string>> checkOutItems;
 
         public Form1()
         {
@@ -31,6 +26,7 @@ namespace CheckoutDriver
         {
             scanner = new Scanner();
             loadItems();
+            checkOutItems = new Dictionary<int, List<string>>();
         }
 
         private void loadItems()
@@ -53,6 +49,7 @@ namespace CheckoutDriver
                 if (scanner.initCheckOut(checkOutNbr))
                 {
                     openCheckOutsComboBox.Items.Add(checkOutNbr);
+                    openCheckOutsComboBox.SelectedIndex = openCheckOutsComboBox.Items.Count - 1;
                     selectedCheckOutNbr = checkOutNbr;
                 }
                 else
@@ -135,8 +132,9 @@ namespace CheckoutDriver
 
         private void updatePurchasedList()
         {
-            checkedOutItemsListBox.Items.Add(selectedItem.getItemName() + " " +
-                qtyOrPoundsTextBox.Text + " price=" + price);
+            string purchaseInfo = selectedItem.getItemName() + " " +
+                qtyOrPoundsTextBox.Text + " price=" + price;
+            checkedOutItemsListBox.Items.Add(purchaseInfo);
         }
 
         private void showDlg(string msg)
@@ -150,7 +148,16 @@ namespace CheckoutDriver
         {
             if (openCheckOutsComboBox.SelectedIndex != -1)
             {
-                selectedCheckOutNbr = openCheckOutsComboBox.SelectedIndex;
+                string checkOut = openCheckOutsComboBox.SelectedItem.ToString();
+                int checkOutNbr;
+                if (int.TryParse(checkOut, out checkOutNbr)) {
+                    selectedCheckOutNbr = checkOutNbr;
+                }
+                else
+                {
+                    showDlg("Something is very wrong.");
+                    openCheckOutsComboBox.Items.Clear();
+                }
             }
         }
     }
